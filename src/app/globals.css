@@ -15,6 +15,8 @@
   --color-ink-soft: #585850;
   --font-serif: var(--font-serif-src), Georgia, serif;
   --font-sans: var(--font-sans-src), system-ui, sans-serif;
+  --color-panel: #2f4a5c;       /* contact panel + footer bar */
+  --color-panel-deep: #213645;
 }
 :root {
   --shadow-soft: 0 30px 60px -30px rgb(42 42 38 / 0.35);
@@ -45,6 +47,8 @@
 /* ============ 3. COMPONENTS ============ */
 @layer components {
   /* layout */
+  .h-hero { font-size: clamp(2rem, 3.7vw, 3.2rem); line-height: 1.12; text-wrap: balance; }
+  .hero-fade { background: linear-gradient(90deg, var(--color-cream) 0%, color-mix(in srgb, var(--color-cream) 90%, transparent) 42%, transparent 78%); }
   .wrap { margin-inline: auto; max-width: 1240px; padding-inline: 1.5rem; }
   @media (min-width: 1024px) { .wrap { padding-inline: 3rem; } }
   .section { padding-block: clamp(4.5rem, 9vw, 8rem); }
@@ -119,7 +123,7 @@
   .field:focus { outline: none; border-color: var(--color-primary); }
 
   /* closing panel */
-  .cta-panel { position: relative; overflow: hidden; border-radius: 2rem; background: linear-gradient(135deg, var(--color-primary), var(--color-primary-deep)); }
+  .cta-panel { position: relative; overflow: hidden; border-radius: 2rem; background: linear-gradient(135deg, var(--color-panel), var(--color-panel-deep)); }
   .cta-panel::after { content: ""; position: absolute; width: 28rem; height: 28rem; right: -9rem; top: -9rem; border-radius: 50%; background: radial-gradient(circle, rgb(181 101 63 / 0.35), transparent 70%); pointer-events: none; }
 }
 
